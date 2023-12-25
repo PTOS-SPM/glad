@@ -1,5 +1,7 @@
 project "GLAD"
     kind "StaticLib"
+    staticruntime "on"
+
     language "C"
 
     targetdir (cwd .. "/bin/" .. outputdir .. "/%{prj.name}")
@@ -16,14 +18,13 @@ project "GLAD"
     }
 
     filter "system:windows"
-        buildoptions { "/MT" } 
+        --buildoptions { "/MT" } TODO remove if works
         systemversion "latest"
-        staticruntime "On"
 
     filter "configurations:Debug"
         runtime "Debug"
-        symbols "On"
+        symbols "on"
 
     filter "configurations:Release"
         runtime "Release"
-        optimize "On"
+        optimize "on"
