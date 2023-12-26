@@ -18,7 +18,6 @@ project "GLAD"
     }
 
     filter "system:windows"
-        --buildoptions { "/MT" } TODO remove if works
         systemversion "latest"
 
     filter "configurations:Debug"
